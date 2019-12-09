@@ -1,0 +1,23 @@
+{
+  "name": "Hoover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hoover.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaitone/Hoover.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaitone/Hoover/issues"
+  },
+  "homepage": "https://github.com/jaitone/Hoover#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
