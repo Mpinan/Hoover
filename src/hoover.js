@@ -63,7 +63,6 @@ class Hoover {
 
     removeDirt() {
 
-
         this.room.dirtAmount.forEach(patch => {
             if (this.position.x === patch.x && this.position.y === patch.y && this.amountOfDirt === 0) {
 
@@ -72,9 +71,8 @@ class Hoover {
 
             }
         })
-
+        
         return `${this.amountOfDirt}`
-
     }
 
 };
