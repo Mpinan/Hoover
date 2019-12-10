@@ -1,14 +1,17 @@
-var fs = require('fs');
+const fs = require('fs');
 
-const text = fs.readFileSync("input.txt").toString().split("/n");
-
-console.log(text)
+let data = fs.readFileSync("input.txt").toString().split("\n")
+let room = data.slice(0, 1).toString().split(" ");
+let hooverPosition = data.slice(1, 2).toString().split(" ");
 
 
 class Hoover {
     constructor() {
-        this.x = 1
-        this.y = 2
+        this.position = {
+            x: Number(hooverPosition[0]), 
+            y: Number(hooverPosition[1]) 
+        }
     }
 }
+console.log(new Hoover)
 module.exports = Hoover;
