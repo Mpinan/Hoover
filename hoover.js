@@ -11,6 +11,8 @@ class Hoover {
             x: Number(hooverPosition[0]),
             y: Number(hooverPosition[1])
         }
+        this.room = new Room
+        
     }
 
     moveHoover(coordenates) {
@@ -21,7 +23,7 @@ class Hoover {
 
             if (move == "N") {
                 this.position.y++
-                if(this.position.y > 5) {
+                if(this.position.y > this.room.roomSide.y) {
                     this.position.y--
                 }
             }
@@ -41,7 +43,7 @@ class Hoover {
             
             if (move == "E") {
                 this.position.x++
-                if(this.position.x > 5) {
+                if(this.position.x > this.room.roomSide.x) {
                     this.position.x--
                 }
             }
