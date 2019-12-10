@@ -12,23 +12,28 @@ class Room {
             x: Number(room[0]),
             y: Number(room[1])
         }
+        this.numberOfDirts = 0
         this.dirt = dirt.map(patchOfDirt => {
             let eachPatchOfDirt = patchOfDirt.split(' ')
-            this.patchOfDirtX = Number(eachPatchOfDirt[0])
-            this.patchOfDirtY = Number(eachPatchOfDirt[1])
-            this.patchOfDirt = new Dirt(this.patchOfDirtX, this.patchOfDirtY)
+            let patchOfDirtX = Number(eachPatchOfDirt[0])
+            let patchOfDirtY = Number(eachPatchOfDirt[1])
+            this.patchOfDirt = new Dirt(patchOfDirtX, patchOfDirtY)
+            this.numberOfDirts++
             console.log(this.patchOfDirt)
+            console.log(this.numberOfDirts)
         })
 
         this.hoover = new Hoover
-        // this.patchOfDirt = new dirt(patchOfDirt[0], patchOfDirt[1])
-        // console.log(this.patchOfDirtX)
-        // console.log(this.patchOfDirtY)
+        // console.log(this.hoover.position.x)
     }
-
-    // this.dirtPatch = new Dirt()
+    removeDirt() {
+        if(this.hoover.position.x && this.hoover.position.y == this.patchOfDirt.x && this.patchOfDirt.y ){
+            this.numberOfDirts--
+            
+            // console.log(this.numberOfDirts)
+        }
+    }
 }
-
 
 
 module.exports = Room

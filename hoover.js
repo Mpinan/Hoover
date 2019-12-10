@@ -1,9 +1,8 @@
 const fs = require('fs');
-// const Room = require('./room');
 
 let data = fs.readFileSync("input.txt").toString().split("\n");
 let hooverPosition = data.slice(1, 2).toString().split(" ");
-
+let coordenates = data[data.length - 1]
 
 class Hoover {
     constructor() {
@@ -11,11 +10,13 @@ class Hoover {
             x: Number(hooverPosition[0]),
             y: Number(hooverPosition[1])
         }
+
+        this.coordenates = coordenates
     }
 
-    moveHoover(coordenates) {
+    moveHoover(position = coordenates) {
 
-        let direction = coordenates.split('')
+        let direction = position.split('')
 
         direction.forEach(move => {
 
