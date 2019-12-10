@@ -13,5 +13,7 @@ class Hoover {
         }
     }
 }
+
 console.log(new Hoover)
+
 module.exports = Hoover;
