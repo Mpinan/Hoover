@@ -1,5 +1,5 @@
 const fs = require('fs');
-const Room = require('./room');
+// const Room = require('./room');
 
 let data = fs.readFileSync("input.txt").toString().split("\n");
 let hooverPosition = data.slice(1, 2).toString().split(" ");
@@ -11,8 +11,6 @@ class Hoover {
             x: Number(hooverPosition[0]),
             y: Number(hooverPosition[1])
         }
-        this.room = new Room
-        
     }
 
     moveHoover(coordenates) {
@@ -23,27 +21,27 @@ class Hoover {
 
             if (move == "N") {
                 this.position.y++
-                if(this.position.y > this.room.roomSide.y) {
+                if (this.position.y > 5) {
                     this.position.y--
                 }
             }
             if (move == "S") {
                 this.position.y--
-                if(this.position.y < 0) {
+                if (this.position.y < 0) {
                     this.position.y++
                 }
             }
 
             if (move == "W") {
                 this.position.x--
-                if(this.position.x < 0) {
+                if (this.position.x < 0) {
                     this.position.x++
                 }
             }
-            
+
             if (move == "E") {
                 this.position.x++
-                if(this.position.x > this.room.roomSide.x) {
+                if (this.position.x > 5) {
                     this.position.x--
                 }
             }
