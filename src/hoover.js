@@ -1,12 +1,13 @@
 const fs = require('fs');
+const Room = require('./room');
 
 let data = fs.readFileSync("input.txt").toString().split("\n");
 let hooverPosition = data.slice(1, 2).toString().split(" ");
 let coordenates = data[data.length - 1]
-const Room = require('./room');
 
 class Hoover {
     constructor() {
+
         this.position = {
             x: Number(hooverPosition[0]),
             y: Number(hooverPosition[1])
@@ -18,65 +19,68 @@ class Hoover {
     }
 
 
-    moveHoover(position = coordenates) {
+    moveHoover(position = this.coordenates) {
 
         let direction = position.split('')
 
-
         direction.forEach(move => {
+
             if (move == "N") {
                 this.position.y++
                 if (this.position.y > 5) {
                     this.position.y--
                 }
             }
+
             if (move == "S") {
                 this.position.y--
                 if (this.position.y < 0) {
                     this.position.y++
                 }
             }
-            
+
             if (move == "W") {
                 this.position.x--
                 if (this.position.x < 0) {
                     this.position.x++
                 }
             }
-            
+
             if (move == "E") {
                 this.position.x++
                 if (this.position.x > 5) {
                     this.position.x--
                 }
             }
+
+            this.removeDirt();
+
         });
-        console.log(this.position)
+
+        return `${this.position.x} ${this.position.y}`;
+
     };
-    
-    // removeDirt() {
-        
-    //     // console.log(this.room.dirtAmount[0].x)
-        
-    //     this.room.dirtAmount.forEach(patch => {
-    //         // console.log(patch)
-    //         // console.log(this.position)
-    //         // console.log(patch.x)
-    //         if (this.position.x === patch.x && this.position.y === patch.y) {
-                
-    //             this.room.dirtAmount.splice(this.room.dirtAmount.indexOf(patch))
-    //             this.amountOfDirt++
-    //             console.log(this.amountOfDirt)
-    //         }
-    //     })
-    // }
-    
+
+    removeDirt() {
+
+
+        this.room.dirtAmount.forEach(patch => {
+            if (this.position.x === patch.x && this.position.y === patch.y && this.amountOfDirt === 0) {
+
+                this.room.dirtAmount.splice(this.room.dirtAmount.indexOf(patch, 1))
+                this.amountOfDirt += 1
+
+            }
+        })
+
+        return `${this.amountOfDirt}`
+
+    }
+
 };
 
-// let hoover = new Hoover
-// hoover.moveHoover()
-// hoover.removeDirt()
-
-// console.log(hoover)
+let hoover = new Hoover
+console.log(hoover.moveHoover())
+console.log(hoover.removeDirt())
 
 module.exports = Hoover;

@@ -1,6 +1,6 @@
 const fs = require('fs');
-// const Hoover = require('./hoover');
 const Dirt = require('./dirt')
+
 let data = fs.readFileSync("input.txt").toString().split("\n")
 
 let coordenates = data.indexOf(data[data.length - 1])
@@ -21,6 +21,7 @@ class Room {
             let patchOfDirtY = Number(eachPatchOfDirt[1])
             patchOfDirt = new Dirt(patchOfDirtX, patchOfDirtY)
             this.dirtAmount.push(patchOfDirt)
+            return patchOfDirt
         })
 
 
