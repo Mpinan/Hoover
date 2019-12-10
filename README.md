@@ -1,6 +1,6 @@
 # Hoover
 
-# Implementation & Sales Engineer
+## Implementation & Sales Engineer
 
 Program that navigates an imaginary robotic hoover (much like a
 Roomba) through an equally imaginary room based on:
@@ -23,7 +23,7 @@ patch is then clean for the remainder of the program run. The hoover is always o
 there is no need to enable it.
 Driving into a wall has no effect (the robot skids in place).
 
-### Goal
+## Goal
 The goal of the program is to take the room dimensions, the locations of the dirt
 patches, the hoover location and the driving instructions as input and to then output
 the following:
@@ -32,7 +32,7 @@ the following:
 - The number of patches of dirt the robot cleaned up
 
 
-### Input
+## Input
 Program input will be received in a file with the format
 described here. You can process it however you like. The file will be named `input.txt`
 and reside in the same directory as your executable program/web page.
@@ -51,7 +51,7 @@ coordinates will be presented in this format)
 - subsequent lines contain the zero or more positions of patches of dirt (one per
 line)
 - the next line then always contains the driving instructions (at least one)
-### Output
+## Output
 Program output should be printed to the standard output (STDOUT) of the terminal (or
 equivalent in the browser, console.log())
 - The first line of your program output should display the X and Y coordinates
@@ -63,8 +63,8 @@ Example (matching the input above):
 1 3
 1
 ```
-### Evaluation 
-#### How to run
+
+## How to run
 
 - Clone this repo `https://github.com/jaitone/Hoover`
 - Go to the directory where you cloned the repo
@@ -72,7 +72,7 @@ Example (matching the input above):
 - To test: `npm test`
 - To see the output `node src/hoover.js`
 
-#### Approach and documentation
+## Approach and documentation
 
 As my firt tech test(hopefully the last one) I was so excited when I started it. I began by writting down the instruccions and get more clarity in a paper by drawing a room, a hoover and patches of dirt. I also draw the path given by the input.txt to make sure I could test where the hoover would end its journey. By doing all this previous steps, I knew what my first test would be and how to approach the challenge in a methodological way. Once I started, I had in my mind all that I wanted to write, but sometimes, I tried to go ahead of my process which caused some delays in my end goal. After some corrections and keeping my Red-Green-Refractor process learned at Makers, I was successful to complete the task.
 
