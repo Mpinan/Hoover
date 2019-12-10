@@ -1,10 +1,11 @@
 const fs = require('fs');
-const Hoover = require('./hoover');
+// const Hoover = require('./hoover');
 const Dirt = require('./dirt')
-
 let data = fs.readFileSync("input.txt").toString().split("\n")
+
+let coordenates = data.indexOf(data[data.length - 1])
 let room = data.slice(0, 1).toString().split(" ");
-let dirt = data.slice(2, 5).toString().split(",")
+let dirt = data.slice(2, coordenates).toString().split(",")
 
 class Room {
     constructor() {
@@ -12,27 +13,19 @@ class Room {
             x: Number(room[0]),
             y: Number(room[1])
         }
-        this.numberOfDirts = 0
-        this.dirt = dirt.map(patchOfDirt => {
+        this.dirtAmount = []
+
+        dirt.map(patchOfDirt => {
             let eachPatchOfDirt = patchOfDirt.split(' ')
             let patchOfDirtX = Number(eachPatchOfDirt[0])
             let patchOfDirtY = Number(eachPatchOfDirt[1])
-            this.patchOfDirt = new Dirt(patchOfDirtX, patchOfDirtY)
-            this.numberOfDirts++
-            console.log(this.patchOfDirt)
-            console.log(this.numberOfDirts)
+            patchOfDirt = new Dirt(patchOfDirtX, patchOfDirtY)
+            this.dirtAmount.push(patchOfDirt)
         })
 
-        this.hoover = new Hoover
-        // console.log(this.hoover.position.x)
+
     }
-    removeDirt() {
-        if(this.hoover.position.x && this.hoover.position.y == this.patchOfDirt.x && this.patchOfDirt.y ){
-            this.numberOfDirts--
-            
-            // console.log(this.numberOfDirts)
-        }
-    }
+
 }
 
 
