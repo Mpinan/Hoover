@@ -1,8 +1,8 @@
 # Hoover
 
 # Implementation & Sales Engineer
-Technical Exercise
-You will write a program that navigates an imaginary robotic hoover (much like a
+
+Program that navigates an imaginary robotic hoover (much like a
 Roomba) through an equally imaginary room based on:
 - Room dimensions as X and Y coordinates, identifying the top right corner of the
 room rectangle. This room is divided up in a grid based on these dimensions; a
@@ -22,14 +22,15 @@ Placing the hoover on a patch of dirt ("hoovering") removes the patch of dirt so
 patch is then clean for the remainder of the program run. The hoover is always on -
 there is no need to enable it.
 Driving into a wall has no effect (the robot skids in place).
+
 ### Goal
 The goal of the program is to take the room dimensions, the locations of the dirt
 patches, the hoover location and the driving instructions as input and to then output
 the following:
+
 - The final hoover position (X, Y)
 - The number of patches of dirt the robot cleaned up
 
-25 Stillman Street, San Francisco, California 94107, United States
 
 ### Input
 Program input will be received in a file with the format
@@ -62,31 +63,17 @@ Example (matching the input above):
 1 3
 1
 ```
-25 Stillman Street, San Francisco, California 94107, United States
+### Evaluation 
+#### How to run
 
-### Deliverable
-The program:
-- Can be a command-line, terminal or web application.
-- Must run on Mac OS X, Linux (x86-64) or in a modern web browser.
-- Can be written in Node.js / JavaScript, but you may also use your programming
-language of choice
-- Can make use of any existing open source libraries that don't directly address
-the problem statement (use your best judgement).
-Send us:
-- A public link to a git repository with the program source code, including any
-code written that is not part of the normal program run (tests, requirements
-and dependencies)
-- The repository should include a README.md file with clear instructions and
-requirements on how to download and run the program
-### Evaluation
-The purpose of this exercise is for us to see some of the code you wrote and should
-be proud of. We will especially consider:
-- Overall user experience
-- Clarity of instructions
-- Code organisation
-- Code quality
-- Code documentation
-We believe we can learn a lot from how you approach a small challenge like this and
-think it can be fun to write as well! Please do take your time when implementing the
-test. Feel free to ask any questions about it, about the role, or just about life at Tray.
-Thanks for your time, and good luck on behalf of all the Tray.io Team!
+- Clone this repo `https://github.com/jaitone/Hoover`
+- Go to the directory where you cloned the repo
+- Open the command line in that path and write `npm install`
+- To test: `npm test`
+- To see the output `node src/hoover.js`
+
+#### Approach and documentation
+
+As my firt tech test(hopefully the last one) I was so excited when I started it. I began by writting down the instruccions and get more clarity in a paper by drawing a room, a hoover and patches of dirt. I also draw the path given by the input.txt to make sure I could test where the hoover would end its journey. By doing all this previous steps, I knew what my first test would be and how to approach the challenge in a methodological way. Once I started, I had in my mind all that I wanted to write, but sometimes, I tried to go ahead of my process which caused some delays in my end goal. After some corrections and keeping my Red-Green-Refractor process learned at Makers, I was successful to complete the task.
+
+I have been learning and getting confident with javascript since my graduation. Thanks to that, I based my documentation in syntax corrections through MDN or W3Schools. I had a lot of fun solving this challenge.
