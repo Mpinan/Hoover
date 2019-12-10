@@ -21,15 +21,29 @@ class Hoover {
 
             if (move == "N") {
                 this.position.y++
+                if(this.position.y > 5) {
+                    this.position.y--
+                }
             }
             if (move == "S") {
                 this.position.y--
+                if(this.position.y < 0) {
+                    this.position.y++
+                }
             }
+
             if (move == "W") {
                 this.position.x--
+                if(this.position.x < 0) {
+                    this.position.x++
+                }
             }
+            
             if (move == "E") {
                 this.position.x++
+                if(this.position.x > 5) {
+                    this.position.x--
+                }
             }
         });
     };
